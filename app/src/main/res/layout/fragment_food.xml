@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#5D2AF4">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/upperLayer"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:gravity="center"
+        android:padding="20dp">
+        <EditText
+            android:background="@drawable/round_back"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Search here"
+            android:gravity="center"/>
+    </LinearLayout>
+    <LinearLayout
+        android:background="@drawable/dashboard_background"
+        android:layout_below="@id/upperLayer"
+        android:orientation="vertical"
+        android:id="@+id/lowerLayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/FoodRv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/FoodAddFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/lowerLayer"
+        android:layout_alignRight="@id/lowerLayer"
+        android:layout_alignBottom="@id/lowerLayer"
+        android:layout_margin="30dp"
+        android:src="@drawable/ic_add_plus_button"/>
+
+
+
+
+</RelativeLayout>
