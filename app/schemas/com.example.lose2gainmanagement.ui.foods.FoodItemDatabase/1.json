@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "2c3a602fd77a5df77d4a3ab474c886bb",
+    "identityHash": "ae896069f072f039b58caa9e136caf0d",
     "entities": [
       {
         "tableName": "FoodItems",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`fId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `fName` TEXT, `fAmount` INTEGER NOT NULL, `fQuantity` TEXT, `fCallories` REAL NOT NULL, `fProten` REAL NOT NULL, `fFat` REAL NOT NULL, `fCarb` REAL NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`fId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `fName` TEXT, `fAmount` TEXT, `fQuantity` TEXT, `fCallories` TEXT, `fProten` TEXT, `fFat` TEXT, `fCarb` TEXT)",
         "fields": [
           {
             "fieldPath": "fId",
@@ -23,8 +23,8 @@
           {
             "fieldPath": "fAmount",
             "columnName": "fAmount",
-            "affinity": "INTEGER",
-            "notNull": true
+            "affinity": "TEXT",
+            "notNull": false
           },
           {
             "fieldPath": "fQuantity",
@@ -35,26 +35,26 @@
           {
             "fieldPath": "fCallories",
             "columnName": "fCallories",
-            "affinity": "REAL",
-            "notNull": true
+            "affinity": "TEXT",
+            "notNull": false
           },
           {
             "fieldPath": "fProten",
             "columnName": "fProten",
-            "affinity": "REAL",
-            "notNull": true
+            "affinity": "TEXT",
+            "notNull": false
           },
           {
             "fieldPath": "fFat",
             "columnName": "fFat",
-            "affinity": "REAL",
-            "notNull": true
+            "affinity": "TEXT",
+            "notNull": false
           },
           {
             "fieldPath": "fCarb",
             "columnName": "fCarb",
-            "affinity": "REAL",
-            "notNull": true
+            "affinity": "TEXT",
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -70,7 +70,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '2c3a602fd77a5df77d4a3ab474c886bb')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ae896069f072f039b58caa9e136caf0d')"
     ]
   }
 }

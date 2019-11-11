@@ -9,17 +9,17 @@
     android:layout_marginTop="10dp"
     >
     <androidx.cardview.widget.CardView
+        android:id="@+id/fItem"
         android:layout_width="350dp"
-        android:layout_height="110dp"
+        android:layout_height="wrap_content"
         app:cardCornerRadius="10dp">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <LinearLayout
-                android:layout_weight="4"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="40dp"
                 android:background="#5D2AF4"
                 >
                 <TextView
@@ -37,6 +37,7 @@
                     android:id="@+id/fAmountQuantity"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:visibility="visible"
                     android:layout_gravity="center"
                     android:layout_marginStart="20dp"
                     android:layout_marginLeft="20dp"
@@ -44,13 +45,27 @@
                     android:gravity="center"
                     android:text="poriman"
                     android:textColor="#fff" />
+                <Button
+                    android:id="@+id/fEditCancel"
+                    android:visibility="gone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#B90000"
+                    android:gravity="center"
+                    android:text="Cancel "
+                    android:textColor="#FFFFFF" />
 
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
-                android:layout_weight="6"
+                android:visibility="visible"
+                android:id="@+id/MainLayout"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="60dp"
                 android:gravity="center">
                 <LinearLayout
                     android:layout_margin="5dp"
@@ -154,6 +169,35 @@
                 </LinearLayout>
 
             </LinearLayout>
+        <LinearLayout
+            android:id="@+id/EditDeleteLayout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:visibility="gone"
+            android:gravity="center">
+            <Button
+                android:id="@+id/foodEdit"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:text="Edit"
+                android:textColor="@color/color_white"
+                android:background="@drawable/round_back"
+                android:backgroundTint="#4CAF50"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+            <Button
+                android:id="@+id/foodDelete"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:textColor="@color/color_white"
+                android:text="Delete"
+                android:background="@drawable/round_back"
+                android:backgroundTint="#E91E63"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

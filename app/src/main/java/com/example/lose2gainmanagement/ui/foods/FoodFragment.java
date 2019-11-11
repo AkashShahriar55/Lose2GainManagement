@@ -20,7 +20,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FoodFragment extends Fragment {
+public class FoodFragment extends Fragment implements AddFoodDialog.addFood{
 
     private FoodViewModel foodViewModel;
     private RecyclerView recyclerView;
@@ -58,11 +58,19 @@ public class FoodFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FoodItems item = new FoodItems("apple",10,"kg",1.0,1.0,1.0,1.0);
-                foodViewModel.insert(item);
+                //FoodItems item = new FoodItems("apple",10,"kg",1.0,1.0,1.0,1.0);
+                //foodViewModel.insert(item);
+                new AddFoodDialog(getContext(), FoodFragment.this).show();
             }
         });
 
         return root;
+    }
+
+    @Override
+    public void addFood(String fName, String fAmount, String fUnit, String fCalorie, String fFat, String fProtein, String fCrab) {
+
+        FoodItems item = new FoodItems(fName,fAmount,fUnit,fCalorie,fFat,fProtein,fCrab);
+        foodViewModel.insert(item);
     }
 }

@@ -10,14 +10,14 @@ public class FoodItems{
     public int fId;
 
     public String fName;
-    public int fAmount;
+    public String fAmount;
     public String fQuantity;
-    public double fCallories;
-    public double fProten;
-    public double fFat;
-    public double fCarb;
+    public String fCallories;
+    public String fProten;
+    public String fFat;
+    public String fCarb;
 
-    public FoodItems( String fName, int fAmount, String fQuantity, double fCallories, double fProten, double fFat, double fCarb) {
+    public FoodItems( String fName, String fAmount, String fQuantity, String fCallories, String fProten, String fFat, String fCarb) {
         this.fName = fName;
         this.fAmount = fAmount;
         this.fQuantity = fQuantity;
@@ -43,11 +43,11 @@ public class FoodItems{
         this.fName = fName;
     }
 
-    public int getfAmount() {
+    public String getfAmount() {
         return fAmount;
     }
 
-    public void setfAmount(int fAmount) {
+    public void setfAmount(String fAmount) {
         this.fAmount = fAmount;
     }
 
@@ -59,35 +59,35 @@ public class FoodItems{
         this.fQuantity = fQuantity;
     }
 
-    public double getfCallories() {
+    public String getfCallories() {
         return fCallories;
     }
 
-    public void setfCallories(double fCallories) {
+    public void setfCallories(String fCallories) {
         this.fCallories = fCallories;
     }
 
-    public double getfProten() {
+    public String getfProten() {
         return fProten;
     }
 
-    public void setfProten(double fProten) {
+    public void setfProten(String fProten) {
         this.fProten = fProten;
     }
 
-    public double getfFat() {
+    public String getfFat() {
         return fFat;
     }
 
-    public void setfFat(double fFat) {
+    public void setfFat(String fFat) {
         this.fFat = fFat;
     }
 
-    public double getfCarb() {
+    public String getfCarb() {
         return fCarb;
     }
 
-    public void setfCarb(double fCarb) {
+    public void setfCarb(String fCarb) {
         this.fCarb = fCarb;
     }
 }

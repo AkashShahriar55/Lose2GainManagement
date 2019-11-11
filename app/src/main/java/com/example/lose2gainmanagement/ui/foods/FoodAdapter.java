@@ -6,10 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lose2gainmanagement.R;
@@ -38,7 +40,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final FoodViewHolder holder, int position) {
         final FoodItems item = itemListFiltered.get(position);
 
         holder.fName.setText(String.valueOf(item.getfName()));
@@ -47,6 +49,29 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         holder.fFat.setText(String.valueOf(item.getfFat()));
         holder.fCarb.setText(String.valueOf(item.getfCarb()));
         holder.fCallories.setText(String.valueOf(item.getfCallories()));
+        holder.item.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                holder.mainLayout.setVisibility(View.GONE);
+                holder.editDeleteLayout.setVisibility(View.VISIBLE);
+                holder.fAmountQuantity.setVisibility(View.GONE);
+                holder.fEditCancel.setVisibility(View.VISIBLE);
+                holder.item.setClickable(false);
+                return false;
+            }
+        });
+
+        holder.fEditCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                holder.mainLayout.setVisibility(View.VISIBLE);
+                holder.editDeleteLayout.setVisibility(View.GONE);
+                holder.fAmountQuantity.setVisibility(View.VISIBLE);
+                holder.fEditCancel.setVisibility(View.GONE);
+                holder.item.setClickable(true);
+            }
+        });
+
     }
 
     @Override
@@ -92,7 +117,9 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
     }
 
     public class FoodViewHolder extends RecyclerView.ViewHolder {
-        private TextView fName,fAmountQuantity,fCallories,fFat,fCarb,fProteen;
+        private TextView fName,fAmountQuantity,fCallories,fFat,fCarb,fProteen,fEditCancel;
+        private LinearLayout mainLayout,editDeleteLayout;
+        private CardView item;
         public FoodViewHolder(@NonNull View itemView) {
             super(itemView);
             fName = itemView.findViewById(R.id.fName);
@@ -101,6 +128,11 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
             fFat = itemView.findViewById(R.id.fFat);
             fCarb = itemView.findViewById(R.id.fCarb);
             fProteen = itemView.findViewById(R.id.fProten);
+            mainLayout = itemView.findViewById(R.id.MainLayout);
+            editDeleteLayout = itemView.findViewById(R.id.EditDeleteLayout);
+            fEditCancel = itemView.findViewById(R.id.fEditCancel);
+            item = itemView.findViewById(R.id.fItem);
+
 
         }
     }

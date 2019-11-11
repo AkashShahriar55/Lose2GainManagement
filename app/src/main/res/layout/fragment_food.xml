@@ -15,6 +15,7 @@
         android:gravity="center"
         android:padding="20dp">
         <EditText
+            android:id="@+id/foodSearch"
             android:background="@drawable/round_back"
             android:layout_width="match_parent"
             android:layout_height="50dp"
