@@ -8,4 +8,5 @@
     <color name="color_monthly_income">#5D2AF4</color>
     <color name="border_monthly_income">#707070</color>
     <color name="transparent">#FFFFFFFF</color>
+    <color name="gray_edit">#E6797979</color>
 </resources>
