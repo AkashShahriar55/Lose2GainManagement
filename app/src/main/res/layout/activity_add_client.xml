@@ -84,7 +84,8 @@
                 android:textColor="@color/color_white"
                 android:background="@drawable/transparent_background"
                 android:textStyle="bold"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:visibility="invisible">
             </Button>
 
             <com.google.android.material.tabs.TabLayout

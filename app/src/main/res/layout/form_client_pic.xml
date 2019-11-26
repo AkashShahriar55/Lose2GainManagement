@@ -38,7 +38,6 @@
                 android:id="@+id/client_image"
                 android:layout_width="194dp"
                 android:layout_height="194dp"
-                android:src="@drawable/ic_avatar_male"
                 android:layout_gravity="center"
                 android:scaleType="fitCenter"
                 android:contentDescription="@string/todo">
@@ -71,6 +70,7 @@
     </androidx.cardview.widget.CardView>
 
     <Button
+        android:id="@+id/add_client"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_client"

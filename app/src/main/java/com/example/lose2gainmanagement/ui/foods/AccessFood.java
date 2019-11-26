@@ -12,12 +12,12 @@ import java.util.List;
 @Dao
 public interface AccessFood{
     @Insert
-    public void insertFood(FoodItems ... items);
+    void insertFood(FoodItems... items);
     @Update
-    public void updateFood(FoodItems ... items);
+    void updateFood(FoodItems... items);
     @Delete
-    public void deleteFood(FoodItems ... items);
+    void deleteFood(FoodItems... items);
     @Query("SELECT * FROM FoodItems")
-    public LiveData<List<FoodItems>> loadAllFoodItems();
+    LiveData<List<FoodItems>> loadAllFoodItems();
 
 }

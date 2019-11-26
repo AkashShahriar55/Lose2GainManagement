@@ -66,4 +66,11 @@
     <string name="add_client">Add Client</string>
     <string name="previous">Previous</string>
     <string name="next">Next</string>
+    <string name="client_added_date">Client Added Date</string>
+
+
+    <string-array name="sex">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
 </resources>
