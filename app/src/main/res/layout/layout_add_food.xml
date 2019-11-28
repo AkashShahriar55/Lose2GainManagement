@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="350dp"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="@color/color_white"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:text="খাবার যোগ করুণ"
+        android:background="@color/color_monthly_income"/>
+    <Spinner
+        android:id="@+id/DietChartAddFoodName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_weight="1"
+        android:id="@+id/DietChartAddFoodQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:inputType="numberDecimal"
+            android:layout_height="50dp"
+            android:hint="পরিমান"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/DietChartAddFoodButton"
+        android:text="Add"
+        android:layout_gravity="end"
+        android:layout_weight="1"
+        android:background="@drawable/round_back"
+        android:backgroundTint="#E91E63"
+        android:layout_margin="10dp"
+        android:textColor="@color/color_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>

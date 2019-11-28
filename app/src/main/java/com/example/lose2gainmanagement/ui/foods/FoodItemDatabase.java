@@ -21,7 +21,7 @@ public abstract class FoodItemDatabase extends RoomDatabase {
             synchronized (FoodItemDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            FoodItemDatabase.class, "database_food1").addCallback(new Callback() {
+                            FoodItemDatabase.class, "l2g_database").addCallback(new Callback() {
                         @Override
                         public void onCreate(@NonNull SupportSQLiteDatabase db) {
                             super.onCreate(db);

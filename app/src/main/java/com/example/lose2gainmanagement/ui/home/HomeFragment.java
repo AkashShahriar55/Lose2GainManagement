@@ -16,6 +16,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.lose2gainmanagement.AddClient;
 import com.example.lose2gainmanagement.R;
+import com.example.lose2gainmanagement.ui.DietChart.DietChartPrinting;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ public class HomeFragment extends Fragment {
     QuickNotificationViewPagerAdapter adapter;
     TabLayout tab_indicator;
 
-    LinearLayout home_first_linear;
+    LinearLayout home_first_linear,dietChart;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class HomeFragment extends Fragment {
         quick_viewpager = root.findViewById(R.id.quick_viewpager);
 
         tab_indicator = root.findViewById(R.id.tab_indicator);
+        dietChart = root.findViewById(R.id.home_Diet_chart);
 
         LinearLayout notification_section = root.findViewById(R.id.linear4);
         ScrollView dashboard_scrollview = root.findViewById(R.id.dashboard_scrollview);
@@ -86,6 +88,14 @@ public class HomeFragment extends Fragment {
                 Intent intent = new Intent(getContext(), AddClient.class);
                 startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
+
+        dietChart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), DietChartPrinting.class);
+                getContext().startActivity ( intent );
             }
         });
 

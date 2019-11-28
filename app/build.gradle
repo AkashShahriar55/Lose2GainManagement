@@ -74,6 +74,10 @@ dependencies {
     implementation 'androidx.core:core:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
 
+    implementation 'com.itextpdf:itext7-core:7.1.8'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    implementation 'com.github.kk121:File-Loader:1.2'
+
 
     //ButterKnife
     implementation 'com.jakewharton:butterknife:10.2.0'

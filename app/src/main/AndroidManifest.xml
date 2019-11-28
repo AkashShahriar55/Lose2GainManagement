@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.lose2gainmanagement">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -13,10 +15,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.form.ImagePickerActivity"></activity>
+        <activity android:theme="@style/Theme.AppCompat.Light.DarkActionBar" android:name=".ui.DietChart.DietChartPrinting"></activity>
+        <activity android:name=".ui.DietChart.DietChartStepAdapter" />
+        <activity android:name=".ui.DietChart.StepThreeFragment" />
+        <activity android:name=".ui.DietChart.StepTwoFragment" />
+        <activity android:name=".ui.DietChart.StepOneFragment" />
         <activity
             android:name=".AddClient"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".ui.form.ImagePickerActivity"></activity>
         <activity android:name=".ui.foods.AddFoodDialog" />
         <activity
             android:name=".LandingPage"

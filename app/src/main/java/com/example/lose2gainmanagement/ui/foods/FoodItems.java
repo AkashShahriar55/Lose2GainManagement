@@ -4,8 +4,10 @@ import androidx.room.Entity;
 import androidx.room.Fts4;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity
-public class FoodItems{
+public class FoodItems implements Serializable {
     @PrimaryKey(autoGenerate = true)
     public int fId;
 

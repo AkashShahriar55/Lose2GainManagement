@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -27,12 +29,14 @@ public class FoodFragment extends Fragment implements AddFoodDialog.addFood{
     private List<FoodItems> itemsList = new ArrayList<>();
     private FloatingActionButton fab;
     private FoodAdapter adapter;
+    private SearchView searchFood;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_food, container, false);
 
         fab = root.findViewById(R.id.FoodAddFab);
+        searchFood = root.findViewById(R.id.foodSearch);
 
         recyclerView = root.findViewById(R.id.FoodRv);
         adapter = new FoodAdapter(itemsList,getContext());
@@ -61,6 +65,20 @@ public class FoodFragment extends Fragment implements AddFoodDialog.addFood{
                 //FoodItems item = new FoodItems("apple",10,"kg",1.0,1.0,1.0,1.0);
                 //foodViewModel.insert(item);
                 new AddFoodDialog(getContext(), FoodFragment.this).show();
+            }
+        });
+
+        searchFood.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                adapter.getFilter().filter(s);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                adapter.getFilter().filter(s);
+                return false;
             }
         });
 
