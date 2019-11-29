@@ -1,0 +1,196 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "57204bf049c947be451e930e7fa40b0b",
+    "entities": [
+      {
+        "tableName": "clients",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`client_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `occupation` TEXT, `phone_no` TEXT, `address` TEXT, `height` TEXT, `weight` TEXT, `sex` TEXT, `age` TEXT, `waist` TEXT, `wrist` TEXT, `chest` TEXT, `hip` TEXT, `foreArm` TEXT, `bicept_left` TEXT, `bicept_right` TEXT, `thigh_left` TEXT, `thigh_right` TEXT, `food_preferred` TEXT, `food_allergic` TEXT, `food_fav` TEXT, `client_added_date` TEXT, `packages` TEXT, `client_image_directory` TEXT, `client_image` TEXT, `priority` TEXT, `running_week` TEXT, `next_followup` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "client_id",
+            "columnName": "client_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "occupation",
+            "columnName": "occupation",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "phone_no",
+            "columnName": "phone_no",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "address",
+            "columnName": "address",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "height",
+            "columnName": "height",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "weight",
+            "columnName": "weight",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sex",
+            "columnName": "sex",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "age",
+            "columnName": "age",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "waist",
+            "columnName": "waist",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "wrist",
+            "columnName": "wrist",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "chest",
+            "columnName": "chest",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "hip",
+            "columnName": "hip",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "foreArm",
+            "columnName": "foreArm",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bicept_left",
+            "columnName": "bicept_left",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bicept_right",
+            "columnName": "bicept_right",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "thigh_left",
+            "columnName": "thigh_left",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "thigh_right",
+            "columnName": "thigh_right",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "food_preferred",
+            "columnName": "food_preferred",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "food_allergic",
+            "columnName": "food_allergic",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "food_fav",
+            "columnName": "food_fav",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "client_added_date",
+            "columnName": "client_added_date",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "packages",
+            "columnName": "packages",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "client_image_directory",
+            "columnName": "client_image_directory",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "client_image",
+            "columnName": "client_image",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "priority",
+            "columnName": "priority",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "running_week",
+            "columnName": "running_week",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "next_followup",
+            "columnName": "next_followup",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "client_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '57204bf049c947be451e930e7fa40b0b')"
+    ]
+  }
+}
