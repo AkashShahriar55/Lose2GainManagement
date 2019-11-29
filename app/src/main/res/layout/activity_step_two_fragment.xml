@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.DietChart.StepTwoFragment"
+    android:paddingBottom="10dp">
+
+    <LinearLayout
+        android:background="@drawable/round_back"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_marginTop="60dp"
+            android:layout_width="match_parent"
+            android:background="#5A5A5A"
+            android:padding="10dp"
+            android:layout_height="0dp">
+            <TextView
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:text="বেলা যোগ করুণ"
+                android:textColor="@color/color_white"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp"
+                android:layout_height="match_parent"/>
+            <Button
+                android:id="@+id/DietChartAddBela"
+                android:text="add"
+                android:background="@drawable/round_back"
+                android:backgroundTint="#4CAF50"
+                android:textColor="@color/color_white"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:background="#AAAAAA"
+                android:layout_weight="10"
+                android:id="@+id/DietChartBelaRV"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/DietChartStepTwoNext"
+            android:layout_width="match_parent"
+            android:background="@drawable/round_back"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@color/color_white"
+            android:layout_marginTop="10dp"
+            android:layout_height="0dp"
+            android:text="Next" />
+    </LinearLayout>
+</LinearLayout>

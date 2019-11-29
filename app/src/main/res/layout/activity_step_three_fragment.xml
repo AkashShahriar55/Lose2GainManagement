@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.DietChart.StepOneFragment">
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:background="@drawable/round_back"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:textColor="@color/color_monthly_income"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:text="Give Instructions"/>
+        <EditText
+            android:id="@+id/DCInstruction"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:gravity="start"
+            android:background="@drawable/round_edittext"
+            android:padding="20dp"
+            android:layout_height="500dp"
+            android:hint="আপনার নির্দেশনা লিখুন"/>
+
+        <Button
+            android:id="@+id/DietChartStepThreeFinish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Finish"
+            android:layout_gravity="end"/>
+    </LinearLayout>
+</LinearLayout>

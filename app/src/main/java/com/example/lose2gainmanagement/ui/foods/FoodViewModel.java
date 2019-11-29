@@ -19,7 +19,7 @@ public class FoodViewModel extends AndroidViewModel {
 
     }
 
-    LiveData<List<FoodItems>> getAllWords() { return mAllFoods; }
+    public LiveData<List<FoodItems>> getAllWords() { return mAllFoods; }
 
     public void insert(FoodItems foods) { mRepository.insert(foods); }
 }

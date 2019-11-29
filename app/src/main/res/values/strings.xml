@@ -3,8 +3,8 @@
     <string name="title_activity_landing_page">LandingPage</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Lose to Gain management</string>
+    <string name="nav_header_subtitle">www.losetogainbd.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="client_follow_up">Client Follow Up:</string>
@@ -24,7 +24,7 @@
     <string name="menu_slideshow">Client Database</string>
     <string name="menu_tools">Make a Diet Chart</string>
     <string name="menu_share">Bill Creation</string>
-    <string name="menu_send">Follow Up report</string>
+    <string name="menu_send">About</string>
     <string name="management">Management</string>
     <string name="personal_details">Personal Details</string>
     <string name="name">Name</string>

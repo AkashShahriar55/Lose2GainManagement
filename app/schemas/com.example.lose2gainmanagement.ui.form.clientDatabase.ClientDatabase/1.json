@@ -2,6 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
+    "identityHash": "be58daeccfd5b6c7dae8e148da282231",
+    "entities": [
+      {
+        "tableName": "clients",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`client_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `occupation` TEXT, `phone_no` TEXT, `address` TEXT, `height` TEXT, `weight` TEXT, `sex` TEXT, `age` TEXT, `waist` TEXT, `wrist` TEXT, `chest` TEXT, `hip` TEXT, `foreArm` TEXT, `bicept_left` TEXT, `bicept_right` TEXT, `thigh_left` TEXT, `thigh_right` TEXT, `food_preferred` TEXT, `food_allergic` TEXT, `food_fav` TEXT, `client_added_date` TEXT, `packages` TEXT, `client_image_directory` TEXT, `client_image` TEXT, `priority` TEXT, `running_week` TEXT, `next_followup` TEXT, `last_followup` TEXT)",
     "identityHash": "57204bf049c947be451e930e7fa40b0b",
     "entities": [
       {
@@ -175,6 +180,12 @@
             "columnName": "next_followup",
             "affinity": "TEXT",
             "notNull": false
+          },
+          {
+            "fieldPath": "last_followup",
+            "columnName": "last_followup",
+            "affinity": "TEXT",
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -190,6 +201,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'be58daeccfd5b6c7dae8e148da282231')"
       "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '57204bf049c947be451e930e7fa40b0b')"
     ]
   }

@@ -21,7 +21,7 @@ public abstract class FoodItemDatabase extends RoomDatabase {
             synchronized (FoodItemDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            FoodItemDatabase.class, "database_food1").addCallback(new Callback() {
+                            FoodItemDatabase.class, "l2g_database").addCallback(new Callback() {
                         @Override
                         public void onCreate(@NonNull SupportSQLiteDatabase db) {
                             super.onCreate(db);
@@ -58,6 +58,91 @@ public abstract class FoodItemDatabase extends RoomDatabase {
             mDao.insertFood(item);
             item = new FoodItems("চিজ স্লাইস","১","পিস","৬২","৪","৫","০.৩");
             mDao.insertFood(item);
+            item = new FoodItems("চিনি","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("ঘি","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("বাটার","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("নারিকেল তেল","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("টক দই","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("কাঠ বাদাম","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("ডিমের সাদা","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("চাল","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("আলু","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("সয়া নাগেট","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("বাটার","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("চিকেন ব্রেস্ট","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("চিকেন/মাছ চামড়া ছাড়া","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("গরুর মাংস","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("পেঁয়াজ","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("টমেটো","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("দুধ ফুল ফ্যাট","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("পালং শাক","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("বাঁধাকপি","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("ইসপগুল ভুষি","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("মাল্টিভিটামিন","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("সিভিট","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("পানি","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("ভাত","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("আপেল","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("কমলা","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("কলা","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("পপকর্ন","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("রুটি","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("মসূর ডাল","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("ওটস","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("মুগ ডাল","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("ছোলা","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("ডাবের পানি","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("কিডনি বিনস/ রাজমা","১০০","গ্রাম","৩৮৭","০","০","১০০");
+            mDao.insertFood(item);
+            item = new FoodItems("ঢাকাই পনির","১০০","গ্রাম","৪০০","২০","৩২","৪");
+            mDao.insertFood(item);
+            item = new FoodItems("ওলিভ অয়েল","১০","গ্রাম","৮৬","০","১০","০");
+            mDao.insertFood(item);
+            item = new FoodItems("যব","১০০","গ্রাম","৩৫৪","১২.৫","২.৩","৫৬");
+            mDao.insertFood(item);
+            item = new FoodItems("গুঁড়া দুধ","১০০","গ্রাম","৫১০","২৪","২৬","৩৭");
+            mDao.insertFood(item);
+            item = new FoodItems("তিসি","১০০","গ্রাম","৫৩৪","১৮.৩","৪২","১.৬");
+            mDao.insertFood(item);
+            item = new FoodItems("দুধ চা স্টেভিয়া দিয়ে","১","কাপ","৪০","২.১","২.১","৩.১");
+            mDao.insertFood(item);
+            item = new FoodItems("দুধ কফি স্টেভিয়া দিয়ে","১","কাপ","৪৫","২.১","৩","৪");
+            mDao.insertFood(item);
+
 
             return null;
         }

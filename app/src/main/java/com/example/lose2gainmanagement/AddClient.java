@@ -65,7 +65,7 @@ public class AddClient extends AppCompatActivity  implements DatePickerDialog.On
 
         viewModel = new ViewModelProvider(AddClient.this).get(ClientViewModel.class);
         String null_str = "";
-        client= new ClientEntity(null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str);
+        client= new ClientEntity(null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str,null_str);
 
         personalInfoFragment =new PersonalInfoFragment(AddClient.this,client);
         measuremntFragment = new MeasurementFragment(client);

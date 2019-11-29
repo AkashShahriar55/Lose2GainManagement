@@ -1,14 +1,14 @@
-package com.example.lose2gainmanagement.ui.tools;
+package com.example.lose2gainmanagement.ui.DietChart;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ToolsViewModel extends ViewModel {
+public class DietChartViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ToolsViewModel() {
+    public DietChartViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is tools fragment");
     }

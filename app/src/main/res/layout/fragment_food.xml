@@ -14,12 +14,13 @@
         android:layout_height="150dp"
         android:gravity="center"
         android:padding="20dp">
-        <EditText
+        <SearchView
             android:id="@+id/foodSearch"
             android:background="@drawable/round_back"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="Search here"
+            android:queryHint="Search here"
+            android:iconifiedByDefault="false"
             android:gravity="center"/>
     </LinearLayout>
     <LinearLayout
