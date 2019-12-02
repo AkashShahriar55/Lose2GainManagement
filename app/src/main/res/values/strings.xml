@@ -67,6 +67,8 @@
     <string name="previous">Previous</string>
     <string name="next">Next</string>
     <string name="client_added_date">Client Added Date</string>
+    <string name="comma">,</string>
+    <string name="next_follow_up_date">Next Follow up Date:</string>
 
 
     <string-array name="sex">

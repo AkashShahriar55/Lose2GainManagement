@@ -36,7 +36,7 @@ import java.util.concurrent.TimeUnit;
 
 public class AddClient extends AppCompatActivity  implements DatePickerDialog.OnDateSetListener, ActivityCompat.OnRequestPermissionsResultCallback{
 
-   private Button next_btn;
+    private Button next_btn;
     private Button previous_btn;
     private int position;
     private FormPagerAdapter adapter;

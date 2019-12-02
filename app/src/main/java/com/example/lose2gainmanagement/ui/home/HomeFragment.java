@@ -16,6 +16,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.lose2gainmanagement.AddClient;
 import com.example.lose2gainmanagement.R;
+import com.example.lose2gainmanagement.clients.ClientActivity;
 import com.example.lose2gainmanagement.ui.DietChart.DietChartPrinting;
 import com.google.android.material.tabs.TabLayout;
 
@@ -28,7 +29,7 @@ public class HomeFragment extends Fragment {
     QuickNotificationViewPagerAdapter adapter;
     TabLayout tab_indicator;
 
-    LinearLayout home_first_linear,dietChart;
+    LinearLayout home_first_linear,dietChart,home_client_database;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -51,6 +52,9 @@ public class HomeFragment extends Fragment {
 
         //layout button for add client
         home_first_linear = root.findViewById(R.id.home_first_linear);
+
+        //Layout Button for client database
+        home_client_database = root.findViewById(R.id.home_client_database);
 
 
 
@@ -97,6 +101,12 @@ public class HomeFragment extends Fragment {
                 Intent intent = new Intent(getContext(), DietChartPrinting.class);
                 getContext().startActivity ( intent );
             }
+        });
+
+
+        home_client_database.setOnClickListener(view -> {
+            Intent intent = new Intent(getContext(), ClientActivity.class);
+            getContext().startActivity ( intent );
         });
 
         return root;

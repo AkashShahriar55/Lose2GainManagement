@@ -4,8 +4,11 @@ import android.app.Application;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import java.util.List;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 
 public class ClientViewModel extends AndroidViewModel {
 
@@ -14,16 +17,23 @@ public class ClientViewModel extends AndroidViewModel {
     private ClientDao clientDao;
     private ClientDatabase clientDatabase;
 
+    private LiveData<List<ClientEntity>> clients;
+
     public ClientViewModel(@NonNull Application application) {
         super(application);
 
         clientDatabase = ClientDatabase.getDatabase(application);
         clientDao = clientDatabase.clientDao();
+        clients = clientDao.getAllClients();
     }
 
     public void insert(ClientEntity clientEntity)
     {
         new InsertAsynkTask(clientDao).execute(clientEntity);
+    }
+
+    public LiveData<List<ClientEntity>> getAllClients(){
+        return clients;
     }
 
     @Override

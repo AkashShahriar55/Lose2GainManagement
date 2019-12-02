@@ -3,13 +3,15 @@ package com.example.lose2gainmanagement.ui.form.clientDatabase;
 
 import android.graphics.Bitmap;
 
+import java.io.Serializable;
+
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "clients")
-public class ClientEntity {
+public class ClientEntity implements Serializable {
 
     public ClientEntity(String name, String occupation, String phone_no, String address, String height, String weight, String sex, String age, String waist, String wrist, String chest, String hip, String foreArm, String bicept_left, String bicept_right, String thigh_left, String thigh_right, String food_preferred, String food_allergic, String food_fav, String client_added_date, String packages, String client_image_directory, String priority, String running_week, String next_followup, String client_image, String last_followup) {
         this.name = name;

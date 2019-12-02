@@ -49,27 +49,22 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         holder.fFat.setText(String.valueOf(item.getfFat()));
         holder.fCarb.setText(String.valueOf(item.getfCarb()));
         holder.fCallories.setText(String.valueOf(item.getfCallories()));
-        holder.item.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                holder.mainLayout.setVisibility(View.GONE);
-                holder.editDeleteLayout.setVisibility(View.VISIBLE);
-                holder.fAmountQuantity.setVisibility(View.GONE);
-                holder.fEditCancel.setVisibility(View.VISIBLE);
-                holder.item.setClickable(false);
-                return false;
-            }
+
+        holder.item.setOnLongClickListener(view -> {
+            holder.mainLayout.setVisibility(View.GONE);
+            holder.editDeleteLayout.setVisibility(View.VISIBLE);
+            holder.fAmountQuantity.setVisibility(View.GONE);
+            holder.fEditCancel.setVisibility(View.VISIBLE);
+            holder.item.setClickable(false);
+            return false;
         });
 
-        holder.fEditCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                holder.mainLayout.setVisibility(View.VISIBLE);
-                holder.editDeleteLayout.setVisibility(View.GONE);
-                holder.fAmountQuantity.setVisibility(View.VISIBLE);
-                holder.fEditCancel.setVisibility(View.GONE);
-                holder.item.setClickable(true);
-            }
+        holder.fEditCancel.setOnClickListener(view -> {
+            holder.mainLayout.setVisibility(View.VISIBLE);
+            holder.editDeleteLayout.setVisibility(View.GONE);
+            holder.fAmountQuantity.setVisibility(View.VISIBLE);
+            holder.fEditCancel.setVisibility(View.GONE);
+            holder.item.setClickable(true);
         });
 
     }
