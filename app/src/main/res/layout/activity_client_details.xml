@@ -67,6 +67,7 @@
         </com.example.lose2gainmanagement.ui.form.NonSwipeableViewPager>
 
         <LinearLayout
+            android:id="@+id/previous_next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -112,7 +113,6 @@
                 android:layout_weight="1">
 
             </Button>
-
 
 
         </LinearLayout>

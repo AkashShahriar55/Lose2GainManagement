@@ -8,10 +8,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.example.lose2gainmanagement.AddClient;
 import com.example.lose2gainmanagement.R;
@@ -30,6 +34,9 @@ public class ClientActivity extends AppCompatActivity {
     private FloatingActionButton fab;
     private ClientAdapter adapter;
     private SearchView searchClient;
+    private boolean swipeBack = false;
+    private ItemTouchHelper itemTouchhelper;
+    private SwipeController   swipeController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,14 +47,21 @@ public class ClientActivity extends AppCompatActivity {
         fab = findViewById(R.id.clientAddFab);
         searchClient = findViewById(R.id.clientSearch);
         recyclerView = findViewById(R.id.clientRv);
-        adapter = new ClientAdapter(itemsList,ClientActivity.this);
+        swipeController = new SwipeController();
+        itemTouchhelper = new ItemTouchHelper(swipeController);
+        itemTouchhelper.attachToRecyclerView(recyclerView);
+        clientViewModel = new ViewModelProvider(ClientActivity.this).get(ClientViewModel.class);
+        adapter = new ClientAdapter(itemsList,ClientActivity.this, swipeController,clientViewModel);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(ClientActivity.this));
-        clientViewModel = new ViewModelProvider(ClientActivity.this).get(ClientViewModel.class);
+
         clientViewModel.getAllClients().observe(ClientActivity.this, clientEntities -> {
             itemsList = clientEntities;
             adapter.setItemList(itemsList);
         });
+
+
+
 
 
         fab.setOnClickListener(view -> {
@@ -57,21 +71,12 @@ public class ClientActivity extends AppCompatActivity {
 
 
 
-        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT) {
-            @Override
-            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
-                return false;
-            }
-
-            @Override
-            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-
-            }
-
-            @Override
-            public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
-                super.onChildDraw(c, recyclerView, viewHolder, dX/4, dY, actionState, isCurrentlyActive);
-            }
-        }).attachToRecyclerView(recyclerView);
     }
+
+    public void attach(){
+        swipeController = new SwipeController();
+        itemTouchhelper = new ItemTouchHelper(swipeController);
+        itemTouchhelper.attachToRecyclerView(recyclerView);
+    }
+
 }

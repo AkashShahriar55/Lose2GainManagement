@@ -69,6 +69,8 @@
     <string name="client_added_date">Client Added Date</string>
     <string name="comma">,</string>
     <string name="next_follow_up_date">Next Follow up Date:</string>
+    <string name="additional_information">Additional Information:</string>
+    <string name="please_select_last_follow_up_date">Please Select Last Follow up Date</string>
 
 
     <string-array name="sex">

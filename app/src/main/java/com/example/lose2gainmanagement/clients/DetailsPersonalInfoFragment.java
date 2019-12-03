@@ -21,25 +21,22 @@ public class DetailsPersonalInfoFragment extends Fragment {
     }
 
     public DetailsPersonalInfoFragment(Context context , ClientEntity client) {
-        this.context = context;
         this.client = client;
     }
 
-    private TextView details_name, details_occupation, details_phone, details_address, details_height, details_weight, details_sex, details_age;
-    private Context context;
     private ClientEntity client;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.details_personal_info,container,false);
-        details_name = rootView.findViewById(R.id.details_name);
-        details_occupation = rootView.findViewById(R.id.details_occupation);
-        details_phone = rootView.findViewById(R.id.details_phone);
-        details_address = rootView.findViewById(R.id.details_address);
-        details_height = rootView.findViewById(R.id.details_height);
-        details_weight = rootView.findViewById(R.id.details_weight);
-        details_sex = rootView.findViewById(R.id.details_sex);
-        details_age = rootView.findViewById(R.id.details_age);
+        TextView details_name = rootView.findViewById(R.id.details_name);
+        TextView details_occupation = rootView.findViewById(R.id.details_occupation);
+        TextView details_phone = rootView.findViewById(R.id.details_phone);
+        TextView details_address = rootView.findViewById(R.id.details_address);
+        TextView details_height = rootView.findViewById(R.id.details_height);
+        TextView details_weight = rootView.findViewById(R.id.details_weight);
+        TextView details_sex = rootView.findViewById(R.id.details_sex);
+        TextView details_age = rootView.findViewById(R.id.details_age);
 
         //setting Text
 

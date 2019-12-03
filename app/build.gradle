@@ -98,4 +98,6 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
 
     implementation 'com.github.yalantis:ucrop:2.2.2'
+
+    implementation 'com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.1'
 }

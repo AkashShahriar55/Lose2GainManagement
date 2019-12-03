@@ -29,7 +29,7 @@ public class ClientViewModel extends AndroidViewModel {
 
     public void insert(ClientEntity clientEntity)
     {
-        new InsertAsynkTask(clientDao).execute(clientEntity);
+        new InsertAsyncTask(clientDao).execute(clientEntity);
     }
 
     public LiveData<List<ClientEntity>> getAllClients(){
@@ -43,11 +43,11 @@ public class ClientViewModel extends AndroidViewModel {
     }
 
 
-    private class InsertAsynkTask extends AsyncTask<ClientEntity,Void,Void>{
+    private class InsertAsyncTask extends AsyncTask<ClientEntity,Void,Void>{
 
        ClientDao mDao;
 
-        public InsertAsynkTask(ClientDao mDao) {
+        public InsertAsyncTask(ClientDao mDao) {
             this.mDao = mDao;
         }
 
@@ -55,6 +55,29 @@ public class ClientViewModel extends AndroidViewModel {
         protected Void doInBackground(ClientEntity... clientEntities) {
 
             mDao.insert(clientEntities[0]);
+            return null;
+        }
+    }
+
+
+    public void delete_client(ClientEntity client){
+
+        new DeleteClientAsyncTask(clientDao).execute(client);
+
+    }
+
+
+
+
+    private class DeleteClientAsyncTask extends AsyncTask<ClientEntity,Void,Void>{
+        ClientDao clientDao;
+        public DeleteClientAsyncTask(ClientDao clientDao) {
+            this.clientDao = clientDao;
+        }
+
+        @Override
+        protected Void doInBackground(ClientEntity... clientEntities) {
+            clientDao.delete_client(clientEntities[0]);
             return null;
         }
     }

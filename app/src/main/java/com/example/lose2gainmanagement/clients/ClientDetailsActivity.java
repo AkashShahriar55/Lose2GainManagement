@@ -1,47 +1,62 @@
 package com.example.lose2gainmanagement.clients;
 
-import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentStatePagerAdapter;
-import androidx.recyclerview.widget.ItemTouchHelper;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager.widget.ViewPager;
 
+import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.daimajia.androidanimations.library.Techniques;
 import com.example.lose2gainmanagement.AddClient;
 import com.example.lose2gainmanagement.R;
 import com.example.lose2gainmanagement.ui.form.FormPagerAdapter;
 import com.example.lose2gainmanagement.ui.form.clientDatabase.ClientEntity;
+import com.example.lose2gainmanagement.ui.form.clientDatabase.ClientViewModel;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
-public class ClientDetailsActivity extends AppCompatActivity {
+public class ClientDetailsActivity extends AppCompatActivity{
 
     private Button next_btn;
     private Button previous_btn;
-    private int position;
+
     private FormPagerAdapter adapter;
     private ViewPager detailsPager;
-    int img_flag = 0;
+
+    private boolean update_flag =false;
+    private String val;
 
     private ClientEntity client;
     private ImageView details_img;
+    private DetailsMedicalProblemFragment detailsMedicalProblemFragment;
+    /*private ClientViewModel viewModel;*/
 
+
+
+    @SuppressLint({"ClickableViewAccessibility", "RestrictedApi"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +69,8 @@ public class ClientDetailsActivity extends AppCompatActivity {
 
         }
 
+        /*viewModel = new ViewModelProvider(ClientDetailsActivity.this).get(ClientViewModel.class);*/
+
         detailsPager = findViewById(R.id.detailsPager);
         //detailsPager.setOffscreenPageLimit(2);
         TabLayout details_indicator = findViewById(R.id.details_indicator);
@@ -62,6 +79,7 @@ public class ClientDetailsActivity extends AppCompatActivity {
         previous_btn = findViewById(R.id.details_previous_btn);
         details_img = findViewById(R.id.details_img);
 
+
         Bitmap bitmap = loadImageFromStorage(client.getClient_image_directory(),client.getClient_image());
         details_img.setImageBitmap(bitmap);
 
@@ -69,9 +87,13 @@ public class ClientDetailsActivity extends AppCompatActivity {
         DetailsPersonalInfoFragment detailsPersonalInfoFragment = new DetailsPersonalInfoFragment(ClientDetailsActivity.this, client);
         DetailsMeasurementFragment detailsMeasurementFragment = new DetailsMeasurementFragment(ClientDetailsActivity.this, client);
 
+        detailsMedicalProblemFragment = new DetailsMedicalProblemFragment(ClientDetailsActivity.this, client);
+
+
         List<Fragment> lst = new ArrayList<>();
         lst.add(detailsPersonalInfoFragment);
         lst.add(detailsMeasurementFragment);
+        lst.add(detailsMedicalProblemFragment);
 
         adapter = new FormPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, ClientDetailsActivity.this, lst);
         detailsPager.setAdapter(adapter);
@@ -80,23 +102,21 @@ public class ClientDetailsActivity extends AppCompatActivity {
 
 
         previous_btn.setOnClickListener(view -> {
-            if (img_flag == 0){
-                detailsPager.setCurrentItem(detailsPager.getCurrentItem() - 1,true);
-            }
-            else {
-                Toast.makeText(ClientDetailsActivity.this,"Please Press Update Button to Update Client Image on Database",Toast.LENGTH_LONG).show();
-            }
+            detailsPager.setCurrentItem(detailsPager.getCurrentItem() - 1,true);
         });
 
         next_btn.setOnClickListener(view -> {
 
-            if (img_flag == 0){
-                detailsPager.setCurrentItem(detailsPager.getCurrentItem() + 1,true);
-            }
-            else {
-                Toast.makeText(ClientDetailsActivity.this,"Please Press Update Button to Update Client Image on Database",Toast.LENGTH_LONG).show();
-            }
+            detailsPager.setCurrentItem(detailsPager.getCurrentItem() + 1,true);
         });
+
+
+
+
+        LinearLayout tabStrip = ((LinearLayout)details_indicator.getChildAt(0));
+        for(int i = 0; i < tabStrip.getChildCount(); i++) {
+            tabStrip.getChildAt(i).setOnTouchListener((v, event) -> true);
+        }
 
 
 
@@ -158,4 +178,6 @@ public class ClientDetailsActivity extends AppCompatActivity {
         return b;
 
     }
+
+
 }
