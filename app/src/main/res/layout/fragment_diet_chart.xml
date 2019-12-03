@@ -13,16 +13,27 @@
         app:cardCornerRadius="75dp"
         android:layout_centerHorizontal="true"
         android:layout_height="120dp">
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center">
+            <ImageView
+                android:id="@+id/stepImage"
+                android:layout_width="50dp"
+                android:src="@drawable/ic_running"
+                android:layout_centerHorizontal="true"
+                android:layout_height="50dp"/>
             <TextView
+                android:layout_below="@+id/stepImage"
                 android:id="@+id/DietChartStepTitle"
                 android:layout_width="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#2196F3"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="#fff"
                 android:text="Step 1"/>
-        </LinearLayout>
+        </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
     <com.example.lose2gainmanagement.ui.DietChart.CustomViewPager

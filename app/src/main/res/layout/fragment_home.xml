@@ -108,7 +108,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:id="@+id/home_Diet_chart"
+                    android:id="@+id/home_food_database"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_marginEnd="5dp"
@@ -119,7 +119,8 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@mipmap/writing"
+                        android:src="@drawable/ic_diet"
+                        android:tint="@color/color_white"
                         android:scaleType="centerInside"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="20dp">
@@ -128,7 +129,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/make_a_diet_chart"
+                        android:text="@string/Foods"
                         android:textColor="@color/color_white"
                         android:textStyle="bold"
                         android:textSize="16sp"
@@ -182,6 +183,7 @@
 
 
                 <LinearLayout
+                    android:id="@+id/Diet_chart_layout"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_marginEnd="5dp"
@@ -192,7 +194,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@mipmap/boy"
+                        android:src="@mipmap/writing"
                         android:scaleType="centerInside"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="20dp">

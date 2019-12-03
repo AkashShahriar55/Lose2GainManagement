@@ -19,7 +19,7 @@ public abstract class ClientDatabase extends RoomDatabase {
         if (clientInstance == null){
             synchronized (ClientDatabase.class){
                 if (clientInstance ==null){
-                    clientInstance = Room.databaseBuilder(context.getApplicationContext(),ClientDatabase.class,"l2g_database").build();
+                    clientInstance = Room.databaseBuilder(context.getApplicationContext(),ClientDatabase.class,"client_db").build();
                 }
             }
         }

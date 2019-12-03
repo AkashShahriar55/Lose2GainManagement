@@ -16,7 +16,7 @@ import com.google.android.material.textfield.TextInputLayout;
 public class AddFoodDialog extends Dialog {
 
     private TextInputLayout fNameInput,fAmountInput,fUnitInput,fCalloriesInput,fFatInput,fProtenInput,fCrabInput;
-    private Button fAddButton;
+    private Button fAddButton,fCancelButton;
     private addFood addFood;
 
     public AddFoodDialog(@NonNull Context context,addFood addFood) {
@@ -38,6 +38,7 @@ public class AddFoodDialog extends Dialog {
         fCrabInput = findViewById(R.id.fCrabInput);
 
         fAddButton = findViewById(R.id.fAddButton);
+        fCancelButton = findViewById(R.id.fCancelButton);
 
         fAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +88,13 @@ public class AddFoodDialog extends Dialog {
                 }
 
                 addFood.addFood(name,amount,unit,callory,fat,proten,crab);
+            }
+        });
+
+        fCancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dismiss();
             }
         });
 

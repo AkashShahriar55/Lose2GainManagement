@@ -89,16 +89,16 @@
                     android:layout_height="50dp"
                     android:hint="বয়স"/>
             </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/DCClientSex"
+            <Spinner
+                android:entries="@array/sex_bangla"
                 android:layout_weight="1"
+                android:id="@+id/DCClientSex"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:hint="সেক্স"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                android:layout_margin="8dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/form_background_dietchart">
+
+            </Spinner>
         </LinearLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/DCClientMedicalProblem"
