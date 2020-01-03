@@ -1,5 +1,6 @@
 package com.example.lose2gainmanagement.clients;
 
+<<<<<<< Updated upstream
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -9,30 +10,50 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+=======
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+>>>>>>> Stashed changes
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+<<<<<<< Updated upstream
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+=======
+import android.widget.ImageView;
+>>>>>>> Stashed changes
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.lose2gainmanagement.R;
+<<<<<<< Updated upstream
 import com.example.lose2gainmanagement.ui.form.clientDatabase.ClientEntity;
 import com.example.lose2gainmanagement.ui.form.clientDatabase.ClientViewModel;
+=======
+import com.example.lose2gainmanagement.ui.foods.FoodItems;
+import com.example.lose2gainmanagement.ui.form.clientDatabase.ClientEntity;
+>>>>>>> Stashed changes
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+<<<<<<< Updated upstream
 import java.io.Serializable;
 import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
+=======
+import java.util.List;
+
+import androidx.annotation.NonNull;
+>>>>>>> Stashed changes
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientViewHolder> implements Filterable {
@@ -40,6 +61,7 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientView
     private List<ClientEntity> itemList;
     private List<ClientEntity> itemListFiltered;
     private Context context;
+<<<<<<< Updated upstream
     private SwipeController swipeController;
     private ClientViewModel clientViewModel;
     private ClientActivity activity;
@@ -52,6 +74,13 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientView
         this.clientViewModel = clientViewModel;
         activity = (ClientActivity) context;
 
+=======
+
+    public ClientAdapter(List<ClientEntity> itemList, Context context) {
+        this.itemList = itemList;
+        this.itemListFiltered = itemList;
+        this.context = context;
+>>>>>>> Stashed changes
     }
 
     @NonNull
@@ -71,6 +100,7 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientView
         holder.client_name.setText(String.valueOf(item.getName()));
         holder.client_sex.setText(String.valueOf(item.getSex()));
         holder.client_phone.setText(String.valueOf(item.getPhone_no()));
+<<<<<<< Updated upstream
         holder.client_age.setText(String.valueOf(item.getAge()));
         holder.client_next_followup.setText(String.valueOf(item.getNext_followup()));
         holder.client_last_followup.setText(String.valueOf(item.getLast_followup()));
@@ -112,6 +142,8 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientView
 
         });
 
+=======
+>>>>>>> Stashed changes
 
     }
 
@@ -127,9 +159,13 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientView
 
     public class ClientViewHolder extends RecyclerView.ViewHolder{
         private ImageView client_img;
+<<<<<<< Updated upstream
         private TextView client_name, client_sex,client_phone,client_age, client_next_followup, client_last_followup;
         private CardView priority_card;
         private ImageButton item_call,item_delete;
+=======
+        private TextView client_name, client_sex,client_phone;
+>>>>>>> Stashed changes
 
         public ClientViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -137,6 +173,7 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientView
             client_name = itemView.findViewById(R.id.client_name);
             client_sex = itemView.findViewById(R.id.client_sex);
             client_phone = itemView.findViewById(R.id.client_phone);
+<<<<<<< Updated upstream
             client_age = itemView.findViewById(R.id.client_age);
             client_next_followup = itemView.findViewById(R.id.client_next_followup);
             client_last_followup = itemView.findViewById(R.id.client_last_followup);
@@ -160,6 +197,8 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientView
             ViewGroup.LayoutParams layoutParams2 = item_secondary_linear.getLayoutParams();
             layoutParams2.width = width-sub;
             item_secondary_linear.setLayoutParams(layoutParams2);
+=======
+>>>>>>> Stashed changes
         }
     }
 
@@ -169,7 +208,11 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientView
         Bitmap b = null;
         try {
             File f=new File(path, img_name);
+<<<<<<< Updated upstream
             b= BitmapFactory.decodeStream(new FileInputStream(f));
+=======
+             b= BitmapFactory.decodeStream(new FileInputStream(f));
+>>>>>>> Stashed changes
             //ImageView img=(ImageView)findViewById(R.id.imgPicker);
             //img.setImageBitmap(b);
 
@@ -186,6 +229,7 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientView
     public void setItemList(List<ClientEntity> itemList) {
         this.itemList = itemList;
         this.itemListFiltered = itemList;
+<<<<<<< Updated upstream
 
         notifyDataSetChanged();
     }
@@ -207,4 +251,11 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ClientView
                 })
                 .show();
     }
+=======
+       /* for(FoodItems i:itemList){
+            Toast.makeText(context,""+i.getfId()+i.getfName(),Toast.LENGTH_SHORT).show();
+        }*/
+        notifyDataSetChanged();
+    }
+>>>>>>> Stashed changes
 }

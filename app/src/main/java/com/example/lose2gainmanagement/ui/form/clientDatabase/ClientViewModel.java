@@ -16,6 +16,7 @@ public class ClientViewModel extends AndroidViewModel {
 
     private ClientDao clientDao;
     private ClientDatabase clientDatabase;
+    private LiveData<List<ClientEntity>> clients;
 
     private LiveData<List<ClientEntity>> clients;
 
@@ -30,6 +31,10 @@ public class ClientViewModel extends AndroidViewModel {
     public void insert(ClientEntity clientEntity)
     {
         new InsertAsyncTask(clientDao).execute(clientEntity);
+    }
+
+    public LiveData<List<ClientEntity>> getAllClients(){
+        return clients;
     }
 
     public LiveData<List<ClientEntity>> getAllClients(){
