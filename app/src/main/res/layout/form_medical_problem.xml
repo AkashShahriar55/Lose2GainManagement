@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/medical_problems"
+        android:text="@string/additional_information"
         android:textSize="18sp"
         android:textColor="@color/color_monthly_income"
         android:background="@drawable/bottom_border"

@@ -10,16 +10,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Spinner;
 
 import com.example.lose2gainmanagement.R;
+import com.example.lose2gainmanagement.ui.form.DateDialog;
 import com.google.android.material.textfield.TextInputLayout;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class StepOneFragment extends Fragment {
 
     private DietChart chart;
-    TextInputLayout cName,cWeight,cHeight,cAge,cSex,cMedicalProblem,chartName,chartDate;
+    TextInputLayout cName,cWeight,cHeight,cAge,cMedicalProblem,chartName,chartDate;
     Button next;
     StepOneNext stepOneNext;
+    Spinner cSex;
+
+    private Calendar c;
 
     public StepOneFragment(DietChart chart,StepOneNext stepOneNext) {
         this.chart = chart;
@@ -51,7 +60,7 @@ public class StepOneFragment extends Fragment {
                 Weight = cWeight.getEditText().getText().toString();
                 Height = cHeight.getEditText().getText().toString();
                 Age = cAge.getEditText().getText().toString();
-                Sex = cSex.getEditText().getText().toString();
+                Sex = (String) cSex.getSelectedItem();
                 MedicalProblem = cMedicalProblem.getEditText().getText().toString();
                 chrtName = chartName.getEditText().getText().toString();
                 cDate = chartDate.getEditText().getText().toString();

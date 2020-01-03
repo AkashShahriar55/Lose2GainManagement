@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    sleep(3000);
+                    sleep(2000);
                     Intent intent = new Intent(MainActivity.this,LandingPage.class);
                     startActivity(intent);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        YoYo.with(Techniques.BounceIn).duration(3000).playOn(main_logo);
+        YoYo.with(Techniques.BounceIn).duration(2000).playOn(main_logo);
         myThread.start();
 
 

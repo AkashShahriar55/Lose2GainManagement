@@ -167,6 +167,7 @@ public class MedicalProblemFragment extends Fragment{
             client.setFood_allergic(food_allergic);
             client.setFood_fav(food_fav);
             client.setClient_added_date(client_added_date);
+            client.setLast_followup(client_added_date);
             client.setPackages(packages);
 
             //for followup and running week

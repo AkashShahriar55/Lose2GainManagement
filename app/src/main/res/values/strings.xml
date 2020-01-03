@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lose2GainManagement</string>
+    <string name="app_name">Lose 2 Gain</string>
     <string name="title_activity_landing_page">LandingPage</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -14,6 +14,7 @@
     <string name="last_follow_up_date">Last Follow Up Date:</string>
     <string name="check_button">Check</string>
     <string name="add_a_client">Add A Client</string>
+    <string name="Foods">Food Database</string>
     <string name="make_a_diet_chart">Make a Diet Chart</string>
     <string name="client_database">Client Database</string>
     <string name="bill_creation">Bill Creation</string>
@@ -67,10 +68,19 @@
     <string name="previous">Previous</string>
     <string name="next">Next</string>
     <string name="client_added_date">Client Added Date</string>
+    <string name="comma">,</string>
+    <string name="next_follow_up_date">Next Follow up Date:</string>
+    <string name="additional_information">Additional Information:</string>
+    <string name="please_select_last_follow_up_date">Please Select Last Follow up Date</string>
 
 
     <string-array name="sex">
         <item>Male</item>
         <item>Female</item>
+    </string-array>
+
+    <string-array name="sex_bangla">
+        <item>পুরুষ</item>
+        <item>মহিলা</item>
     </string-array>
 </resources>

@@ -8,12 +8,15 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager.widget.ViewPager;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.lose2gainmanagement.ui.form.ClientImage;
@@ -36,7 +39,7 @@ import java.util.concurrent.TimeUnit;
 
 public class AddClient extends AppCompatActivity  implements DatePickerDialog.OnDateSetListener, ActivityCompat.OnRequestPermissionsResultCallback{
 
-   private Button next_btn;
+    private Button next_btn;
     private Button previous_btn;
     private int position;
     private FormPagerAdapter adapter;
@@ -50,6 +53,7 @@ public class AddClient extends AppCompatActivity  implements DatePickerDialog.On
     private ClientImage clientImage;
     private  ClientEntity client;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -114,6 +118,11 @@ public class AddClient extends AppCompatActivity  implements DatePickerDialog.On
         previous_btn.setOnClickListener(view -> {
             formPager.setCurrentItem(formPager.getCurrentItem() - 1,true);
         });
+
+        LinearLayout tabStrip = ((LinearLayout)form_indicator.getChildAt(0));
+        for(int i = 0; i < tabStrip.getChildCount(); i++) {
+            tabStrip.getChildAt(i).setOnTouchListener((v, event) -> true);
+        }
 
         pageChange();
     }

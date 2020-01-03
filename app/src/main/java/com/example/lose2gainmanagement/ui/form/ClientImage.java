@@ -8,6 +8,9 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -22,8 +25,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.lose2gainmanagement.MainActivity;
+import com.example.lose2gainmanagement.AddClient;
 import com.example.lose2gainmanagement.R;
+import com.example.lose2gainmanagement.clients.ClientActivity;
 import com.example.lose2gainmanagement.ui.form.clientDatabase.ClientEntity;
 import com.example.lose2gainmanagement.ui.form.clientDatabase.ClientViewModel;
 import com.karumi.dexter.Dexter;
@@ -102,11 +106,12 @@ public class ClientImage extends Fragment implements ActivityCompat.OnRequestPer
 
 
                             if (client.getSex().equals("Female")){
-                                Bitmap myBitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.ic_avatar_female);
+                                Bitmap myBitmap = BitmapFactory.decodeResource(context.getResources(),R.mipmap.avatar_girl);
+
                                 saveToInternalStorage(myBitmap);
                             }
                             else{
-                                Bitmap myBitmap  = BitmapFactory.decodeResource(context.getResources(),R.drawable.ic_avatar_male);
+                                Bitmap myBitmap  = BitmapFactory.decodeResource(context.getResources(),R.mipmap.avatar_boy);
                                 saveToInternalStorage(myBitmap);
                             }
                         }
@@ -131,7 +136,13 @@ public class ClientImage extends Fragment implements ActivityCompat.OnRequestPer
 
                 }
             }
+            else {
+                saveToInternalStorage(bitmap);
+            }
             viewModel.insert(client);
+
+            Intent intent = new Intent(context, ClientActivity.class);
+            startActivity(intent);
         });
 
         return rootView;
@@ -178,11 +189,11 @@ public class ClientImage extends Fragment implements ActivityCompat.OnRequestPer
                 if (isExternalStorageWritable()) {
 
                     if (client.getSex().equals("Female")){
-                        Bitmap myBitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.ic_avatar_female);
+                        Bitmap myBitmap = BitmapFactory.decodeResource(context.getResources(),R.mipmap.avatar_girl);
                         saveToInternalStorage(myBitmap);
                     }
                     else{
-                        Bitmap myBitmap  = BitmapFactory.decodeResource(context.getResources(),R.drawable.ic_avatar_male);
+                        Bitmap myBitmap  = BitmapFactory.decodeResource(context.getResources(),R.mipmap.avatar_boy);
                         saveToInternalStorage(myBitmap);
                     }
 
@@ -264,7 +275,7 @@ public class ClientImage extends Fragment implements ActivityCompat.OnRequestPer
                     // You can update this bitmap to your server
                     bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), uri);
                     client_image_flag = 1;
-                    saveToInternalStorage(bitmap);
+
 
                     // loading profile image from local cache
                     loadProfile(uri.toString());
@@ -341,13 +352,13 @@ public class ClientImage extends Fragment implements ActivityCompat.OnRequestPer
             directory.mkdirs();
         }
         // Create imageDir
-        String fileName = String.format(client.getName() + "_%d.jpg",System.currentTimeMillis());
-        File mypath=new File(directory,fileName);
+        String fileName = String.format("Client" + "_%d.jpg",System.currentTimeMillis());
+        File myPath =new File(directory,fileName);
         client.setClient_image(fileName);
 
         FileOutputStream fos = null;
         try {
-            fos = new FileOutputStream(mypath);
+            fos = new FileOutputStream(myPath);
             // Use the compress method on the BitMap object to write image to the OutputStream
             bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, fos);
         } catch (Exception e) {
@@ -365,6 +376,8 @@ public class ClientImage extends Fragment implements ActivityCompat.OnRequestPer
         Log.d("directory",directory.getAbsolutePath());
         Log.d("image",fileName);
     }
+
+
 
 
 

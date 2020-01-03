@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/additional_information"
+        android:textSize="18sp"
+        android:textColor="@color/color_monthly_income"
+        android:background="@drawable/bottom_border"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="2dp"
+        android:paddingBottom="5dp">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="6dp">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/food_preferred"
+            android:textSize="16sp"
+            android:textColor="@color/color_monthly_income"
+            android:textStyle="bold"
+            android:gravity="center_vertical">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/details_food_preferred"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/form_background"
+            android:gravity="center_vertical"
+            android:textSize="16sp">
+        </TextView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="6dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/food_allergic"
+            android:textSize="16sp"
+            android:textColor="@color/color_monthly_income"
+            android:textStyle="bold"
+            android:gravity="center_vertical">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/details_food_allergic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/form_background"
+            android:gravity="center_vertical"
+            android:textSize="16sp">
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="6dp">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/food_favourite"
+            android:textSize="16sp"
+            android:textColor="@color/color_monthly_income"
+            android:textStyle="bold"
+            android:gravity="center_vertical">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/details_food_fav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/form_background"
+            android:gravity="center_vertical"
+            android:textSize="16sp">
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="6dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/client_added_date"
+            android:textSize="16sp"
+            android:textColor="@color/color_monthly_income"
+            android:textStyle="bold"
+            android:gravity="center_vertical">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/details_client_added_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/form_background"
+            android:gravity="center_vertical"
+            android:textSize="16sp">
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/packages"
+            android:textSize="18sp"
+            android:textColor="@color/color_monthly_income"
+            android:textStyle="bold"
+            android:gravity="center_vertical">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/details_package"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_monthly_income"
+            android:gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:textSize="16sp">
+        </TextView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="6dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/next_follow_up_date"
+            android:textSize="16sp"
+            android:textColor="@color/color_monthly_income"
+            android:textStyle="bold"
+            android:gravity="center_vertical">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/details_next_follow_up_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/form_background"
+            android:gravity="center_vertical"
+            android:textSize="16sp">
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="6dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/last_follow_up_date"
+            android:textSize="16sp"
+            android:textColor="@color/color_monthly_income"
+            android:textStyle="bold"
+            android:gravity="center_vertical">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/details_last_follow_up_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/form_background"
+            android:gravity="center_vertical"
+            android:textSize="16sp">
+        </TextView>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>

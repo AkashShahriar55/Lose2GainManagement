@@ -4,8 +4,11 @@ import android.app.Application;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import java.util.List;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 
 public class ClientViewModel extends AndroidViewModel {
 
@@ -14,16 +17,23 @@ public class ClientViewModel extends AndroidViewModel {
     private ClientDao clientDao;
     private ClientDatabase clientDatabase;
 
+    private LiveData<List<ClientEntity>> clients;
+
     public ClientViewModel(@NonNull Application application) {
         super(application);
 
         clientDatabase = ClientDatabase.getDatabase(application);
         clientDao = clientDatabase.clientDao();
+        clients = clientDao.getAllClients();
     }
 
     public void insert(ClientEntity clientEntity)
     {
-        new InsertAsynkTask(clientDao).execute(clientEntity);
+        new InsertAsyncTask(clientDao).execute(clientEntity);
+    }
+
+    public LiveData<List<ClientEntity>> getAllClients(){
+        return clients;
     }
 
     @Override
@@ -33,11 +43,11 @@ public class ClientViewModel extends AndroidViewModel {
     }
 
 
-    private class InsertAsynkTask extends AsyncTask<ClientEntity,Void,Void>{
+    private class InsertAsyncTask extends AsyncTask<ClientEntity,Void,Void>{
 
        ClientDao mDao;
 
-        public InsertAsynkTask(ClientDao mDao) {
+        public InsertAsyncTask(ClientDao mDao) {
             this.mDao = mDao;
         }
 
@@ -45,6 +55,29 @@ public class ClientViewModel extends AndroidViewModel {
         protected Void doInBackground(ClientEntity... clientEntities) {
 
             mDao.insert(clientEntities[0]);
+            return null;
+        }
+    }
+
+
+    public void delete_client(ClientEntity client){
+
+        new DeleteClientAsyncTask(clientDao).execute(client);
+
+    }
+
+
+
+
+    private class DeleteClientAsyncTask extends AsyncTask<ClientEntity,Void,Void>{
+        ClientDao clientDao;
+        public DeleteClientAsyncTask(ClientDao clientDao) {
+            this.clientDao = clientDao;
+        }
+
+        @Override
+        protected Void doInBackground(ClientEntity... clientEntities) {
+            clientDao.delete_client(clientEntities[0]);
             return null;
         }
     }

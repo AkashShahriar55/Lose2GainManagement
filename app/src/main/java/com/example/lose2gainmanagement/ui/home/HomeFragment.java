@@ -15,8 +15,11 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.lose2gainmanagement.AddClient;
+import com.example.lose2gainmanagement.LandingPage;
 import com.example.lose2gainmanagement.R;
+import com.example.lose2gainmanagement.clients.ClientActivity;
 import com.example.lose2gainmanagement.ui.DietChart.DietChartPrinting;
+import com.example.lose2gainmanagement.ui.foods.FoodFragment;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -27,8 +30,12 @@ public class HomeFragment extends Fragment {
     ViewPager quick_viewpager;
     QuickNotificationViewPagerAdapter adapter;
     TabLayout tab_indicator;
+    navigateTo myListener;
 
-    LinearLayout home_first_linear,dietChart;
+    static boolean animFlag = false;
+
+
+    LinearLayout home_first_linear,dietChart,home_client_database,foodDatabase;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -40,17 +47,23 @@ public class HomeFragment extends Fragment {
         quick_viewpager = root.findViewById(R.id.quick_viewpager);
 
         tab_indicator = root.findViewById(R.id.tab_indicator);
-        dietChart = root.findViewById(R.id.home_Diet_chart);
+        dietChart = root.findViewById(R.id.Diet_chart_layout);
+        foodDatabase = root.findViewById(R.id.home_food_database);
 
         LinearLayout notification_section = root.findViewById(R.id.linear4);
         ScrollView dashboard_scrollview = root.findViewById(R.id.dashboard_scrollview);
         dashboard_scrollview.setVerticalScrollBarEnabled(false);
         //dashboard_scrollview.setHorizontalScrollBarEnabled(false);
 
+        myListener = (navigateTo) getActivity();
+
 
 
         //layout button for add client
         home_first_linear = root.findViewById(R.id.home_first_linear);
+
+        //Layout Button for client database
+        home_client_database = root.findViewById(R.id.home_client_database);
 
 
 
@@ -68,18 +81,23 @@ public class HomeFragment extends Fragment {
         /*Set up tab indicator with view pager*/
         tab_indicator.setupWithViewPager(quick_viewpager);
 
-        Animation fade_in,slide_in;
-        //YoYo.with(Techniques.DropOut).duration(3000).playOn(notification_section);
+        if(animFlag == false){
+            Animation fade_in,slide_in;
+            //YoYo.with(Techniques.DropOut).duration(3000).playOn(notification_section);
 
-        fade_in = AnimationUtils.loadAnimation(getContext(),
-                R.anim.fade_in);
+            fade_in = AnimationUtils.loadAnimation(getContext(),
+                    R.anim.fade_in);
 
-        notification_section.setAnimation(fade_in);
+            notification_section.setAnimation(fade_in);
 
 
-        slide_in = AnimationUtils.loadAnimation(getContext(),
-                R.anim.slide_in_bottom);
-        dashboard_scrollview.setAnimation(slide_in);
+            slide_in = AnimationUtils.loadAnimation(getContext(),
+                    R.anim.slide_in_bottom);
+            dashboard_scrollview.setAnimation(slide_in);
+            animFlag = true;
+        }
+
+
 
 
         home_first_linear.setOnClickListener(new View.OnClickListener() {
@@ -91,14 +109,36 @@ public class HomeFragment extends Fragment {
             }
         });
 
+
+
         dietChart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), DietChartPrinting.class);
-                getContext().startActivity ( intent );
+                myListener.navigateToDietChart();
             }
         });
 
+        foodDatabase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myListener.navigateToFood();
+            }
+        });
+
+
+        home_client_database.setOnClickListener(view -> {
+            Intent intent = new Intent(getContext(), ClientActivity.class);
+            getContext().startActivity ( intent );
+        });
+
+
         return root;
     }
+
+    public interface navigateTo{
+        void navigateToFood();
+        void navigateToDietChart();
+    }
+
+
 }
